@@ -1,7 +1,9 @@
 package com.codegym.repository;
 
-import com.codegym.model.DiaryUser;
+import com.codegym.model.DiaryStudent;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IDiaryStudentRepository extends CrudRepository<DiaryUser,Long> {
+@Repository
+public interface IDiaryStudentRepository extends CrudRepository<DiaryStudent,Long> {
 }
