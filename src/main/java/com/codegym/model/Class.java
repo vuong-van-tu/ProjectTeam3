@@ -21,5 +21,4 @@ public class Class {
     joinColumns = @JoinColumn(name = "class_id"),
     inverseJoinColumns = @JoinColumn(name = "subject_id"))
     List<Subject> subjects;
-
 }
