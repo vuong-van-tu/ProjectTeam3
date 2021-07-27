@@ -6,19 +6,16 @@
     <title>Title</title>
 </head>
 <body>
-
 <table border="1">
     <tr>
         <td>name user</td>
         <td>name role</td>
     </tr>
-    <tr th:each="u : ${listUser}">
-        <td th:field="${u.name}"></td>
+    <tr th:each="lu : ${listUser}">
+        <td th:text="${lu.name}">1</td>
+        <td th:each="lr : ${lu.roles}" th:text="${lr.name}"></td>
     </tr>
-<!--    <tr th:each="r : ${listRole}">-->
-<!--        <td th:text="${r.name}"></td>-->
-<!--    </tr>-->
-</table>
 
+</table>
 </body>
 </html>

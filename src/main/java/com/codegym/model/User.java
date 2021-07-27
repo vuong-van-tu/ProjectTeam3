@@ -14,12 +14,10 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     @Column(nullable = false)
     private String name;
@@ -38,12 +36,30 @@ public class User {
     private String gender;
     @Column(nullable = false)
     private String status;
-    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @ManyToMany(mappedBy = "users")
     private Collection<Role> roles;
+    @ManyToMany(targetEntity = Class.class,fetch = FetchType.EAGER)
+    @JoinTable(name = "user_class",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "class_id"))
+    Collection<Class> classes;
+
+    public User() {
+    }
+
+    public User(Long id, String name, String email, String password, String phoneNumber, LocalDate dateOfBirth, String address, String gender, String status, Collection<Role> roles, Collection<Class> classes) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.gender = gender;
+        this.status = status;
+        this.roles = roles;
+        this.classes = classes;
+    }
 
     public Long getId() {
         return id;
@@ -125,4 +141,11 @@ public class User {
         this.roles = roles;
     }
 
+    public Collection<Class> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Collection<Class> classes) {
+        this.classes = classes;
+    }
 }
