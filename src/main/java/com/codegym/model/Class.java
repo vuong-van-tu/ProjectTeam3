@@ -15,6 +15,7 @@ public class Class {
     private Collection<Subject> subjects;
 
 
+
     @ManyToMany(targetEntity = User.class,fetch = FetchType.EAGER)
     @JoinTable(name = "user_class",
                 joinColumns = @JoinColumn(name = "class_id"),

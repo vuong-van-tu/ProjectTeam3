@@ -25,6 +25,7 @@ public class DiaryClass {
     public DiaryClass() {
     }
 
+
     public DiaryClass(Long id, User teacher, Class aClass, LocalDate date, String description) {
         this.id = id;
         this.teacher = teacher;

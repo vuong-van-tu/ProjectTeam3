@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 
 public class Mark {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

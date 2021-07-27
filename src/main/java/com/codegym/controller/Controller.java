@@ -18,6 +18,7 @@ public class Controller {
     UserService userService;
 
 
+
     @GetMapping("/user")
     public String list(Model model) {
         List<User> userList = (List<User>) userService.findAll();

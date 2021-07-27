@@ -37,6 +37,7 @@ public class User {
     private String status;
 
 
+
     @ManyToMany(mappedBy = "users")
     private Collection<Role> roles;
 
