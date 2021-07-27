@@ -1,10 +1,24 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<table border="1">
+    <tr>
+        <td>name role</td>
+        <td>name user</td>
+    </tr>
+    <tr th:each="u : ${listUser}">
+        <td th:field="${u.name}"></td>
+    </tr>
+<!--    <tr th:each="r : ${listRole}">-->
+<!--        <td th:text="${r.name}"></td>-->
+<!--    </tr>-->
+</table>
 
 </body>
 </html>
