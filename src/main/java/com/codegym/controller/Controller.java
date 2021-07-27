@@ -20,7 +20,7 @@ public class Controller {
 
     @GetMapping("/user")
     public String list(Model model) {
-        List<User> userList = (List<User>) userService.findAll();
+        Iterable<User> userList =  userService.findAll();
         List<Role> roles = userService.findByUser(userList);
         model.addAttribute("listRole", roles);
         model.addAttribute("listUser", userList);
