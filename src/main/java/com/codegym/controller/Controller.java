@@ -24,7 +24,6 @@ public class Controller {
         List<Role> roles = userService.findByUser(userList);
         model.addAttribute("listRole", roles);
         model.addAttribute("listUser", userList);
-
         return "/user/list";
     }
 }

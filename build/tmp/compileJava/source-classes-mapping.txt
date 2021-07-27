@@ -64,10 +64,10 @@ com/codegym/model/Subject.java
  com.codegym.model.Subject
 com/codegym/repository/IDiaryStudentRepository.java
  com.codegym.repository.IDiaryStudentRepository
-com/codegym/model/Class.java
- com.codegym.model.Class
 com/codegym/controller/TeacherController.java
  com.codegym.controller.TeacherController
+com/codegym/model/Class.java
+ com.codegym.model.Class
 com/codegym/controller/DiaryClassController.java
  com.codegym.controller.DiaryClassController
 com/codegym/service/User/UserService.java

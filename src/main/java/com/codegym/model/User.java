@@ -35,17 +35,19 @@ public class User {
     private String gender;
     @Column(nullable = false)
     private String status;
-    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
+
+
+    @ManyToMany(mappedBy = "users")
     private Collection<Role> roles;
+
+
+    @ManyToMany(mappedBy = "students")
+    private Collection<Class> classes;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String password, String phoneNumber, LocalDate dateOfBirth, String address, String gender, String status, Collection<Role> roles) {
+    public User(Long id, String name, String email, String password, String phoneNumber, LocalDate dateOfBirth, String address, String gender, String status, Collection<Role> roles, Collection<Class> classes) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -56,6 +58,7 @@ public class User {
         this.gender = gender;
         this.status = status;
         this.roles = roles;
+        this.classes = classes;
     }
 
     public Long getId() {
@@ -136,5 +139,13 @@ public class User {
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
+    }
+
+    public Collection<Class> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Collection<Class> classes) {
+        this.classes = classes;
     }
 }

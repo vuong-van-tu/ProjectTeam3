@@ -1,20 +1,20 @@
 package com.codegym.model;
 
-import lombok.*;
-
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+
 
 @Entity
-
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @ManyToMany(mappedBy = "roles")
+
+    @ManyToMany(targetEntity = User.class,fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role",
+               joinColumns = @JoinColumn(name = "user_id"),
+               inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<User> users;
 
     public Role(Long id, String name, Collection<User> users) {
@@ -22,6 +22,7 @@ public class Role {
         this.name = name;
         this.users = users;
     }
+
 
     public Role() {
     }

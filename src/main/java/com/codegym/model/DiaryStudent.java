@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity(name = "diary_student")
 public class DiaryStudent {
     @Id
@@ -24,4 +22,55 @@ public class DiaryStudent {
     @JoinColumn(name = "student_id")
     private User student;
     private LocalDate date;
+
+    public DiaryStudent() {
+    }
+
+    public DiaryStudent(long id, String description, User teacher, User student, LocalDate date) {
+        this.id = id;
+        this.description = description;
+        this.teacher = teacher;
+        this.student = student;
+        this.date = date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public User getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(User teacher) {
+        this.teacher = teacher;
+    }
+
+    public User getStudent() {
+        return student;
+    }
+
+    public void setStudent(User student) {
+        this.student = student;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 }
