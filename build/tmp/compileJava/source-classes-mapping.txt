@@ -34,22 +34,22 @@ com/codegym/logger/Logger.java
  com.codegym.logger.Logger
 com/codegym/formatter/Formatter.java
  com.codegym.formatter.Formatter
+com/codegym/repository/IUserRepository.java
+ com.codegym.repository.IUserRepository
 com/codegym/service/DiaryClass/IDiaryClassService.java
  com.codegym.service.DiaryClass.IDiaryClassService
 com/codegym/controller/DiaryStudentController.java
  com.codegym.controller.DiaryStudentController
-com/codegym/service/DiaryClass/DiaryClassService.java
- com.codegym.service.DiaryClass.DiaryClassService
 com/codegym/controller/DiaryClassController.java
  com.codegym.controller.DiaryClassController
-com/codegym/controller/MarkController.java
- com.codegym.controller.MarkController
-com/codegym/repository/IUserRepository.java
- com.codegym.repository.IUserRepository
-com/codegym/controller/SubjectController.java
- com.codegym.controller.SubjectController
 com/codegym/model/Class.java
  com.codegym.model.Class
+com/codegym/service/DiaryClass/DiaryClassService.java
+ com.codegym.service.DiaryClass.DiaryClassService
+com/codegym/controller/MarkController.java
+ com.codegym.controller.MarkController
+com/codegym/controller/SubjectController.java
+ com.codegym.controller.SubjectController
 com/codegym/model/Role.java
  com.codegym.model.Role
 com/codegym/model/Mark.java

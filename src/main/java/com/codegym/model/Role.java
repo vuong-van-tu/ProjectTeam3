@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +16,15 @@ public class Role {
     private String name;
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
+
+    public Role(Long id, String name, Collection<User> users) {
+        this.id = id;
+        this.name = name;
+        this.users = users;
+    }
+
+    public Role() {
+    }
 
     public Long getId() {
         return id;

@@ -14,9 +14,6 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,12 +35,28 @@ public class User {
     private String gender;
     @Column(nullable = false)
     private String status;
-    @ManyToMany(targetEntity = Role.class)
+    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+
+    public User() {
+    }
+
+    public User(Long id, String name, String email, String password, String phoneNumber, LocalDate dateOfBirth, String address, String gender, String status, Collection<Role> roles) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.gender = gender;
+        this.status = status;
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;
@@ -123,21 +136,5 @@ public class User {
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", address='" + address + '\'' +
-                ", gender='" + gender + '\'' +
-                ", status='" + status + '\'' +
-                ", roles=" + roles +
-                '}';
     }
 }
