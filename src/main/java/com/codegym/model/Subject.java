@@ -14,13 +14,16 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @ManyToMany(mappedBy = "subjects")
-    private Collection<Class> classes;
+    @ManyToMany(targetEntity = Class.class,fetch = FetchType.EAGER)
+    @JoinTable(name = "subject_class",
+            joinColumns = @JoinColumn(name = "subject_id"),
+            inverseJoinColumns = @JoinColumn(name = "class_id"))
+    private Collection<Class> class_sub;
 
     public Subject(long id, String name, Collection<Class> classes) {
         this.id = id;
         this.name = name;
-        this.classes = classes;
+        this.class_sub = classes;
     }
 
     public Subject() {
@@ -43,10 +46,10 @@ public class Subject {
     }
 
     public Collection<Class> getClasses() {
-        return classes;
+        return class_sub;
     }
 
     public void setClasses(Collection<Class> classes) {
-        this.classes = classes;
+        this.class_sub = classes;
     }
 }

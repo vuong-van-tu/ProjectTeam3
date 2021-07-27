@@ -1,8 +1,5 @@
 package com.codegym.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -14,17 +11,14 @@ public class Class {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @ManyToMany(targetEntity = Subject.class,fetch = FetchType.EAGER)
-    @JoinTable(name = "subject_class",
-                joinColumns = @JoinColumn(name = "class_id"),
-                inverseJoinColumns = @JoinColumn(name = "subject_id"))
+    @ManyToMany(mappedBy = "class_sub")
     private Collection<Subject> subjects;
 
 
     @ManyToMany(targetEntity = User.class,fetch = FetchType.EAGER)
     @JoinTable(name = "user_class",
-                joinColumns = @JoinColumn(name = "user_id"),
-                inverseJoinColumns = @JoinColumn(name = "class_id"))
+                joinColumns = @JoinColumn(name = "class_id"),
+                inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Collection<User> students;
 
     public Class() {

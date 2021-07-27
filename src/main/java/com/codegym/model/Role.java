@@ -13,8 +13,8 @@ public class Role {
 
     @ManyToMany(targetEntity = User.class,fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
-               joinColumns = @JoinColumn(name = "user_id"),
-               inverseJoinColumns = @JoinColumn(name = "role_id"))
+               joinColumns = @JoinColumn(name = "role_id"),
+               inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Collection<User> users;
 
     public Role(Long id, String name, Collection<User> users) {
