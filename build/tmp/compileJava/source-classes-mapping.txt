@@ -1,19 +1,62 @@
-com/codegym/model/Role.java
- com.codegym.model.Role
+com/codegym/service/Mark/MarkService.java
+ com.codegym.service.Mark.MarkService
 com/codegym/model/Subject.java
  com.codegym.model.Subject
 com/codegym/config/AppInit.java
  com.codegym.config.AppInit
 com/codegym/config/AppConfig.java
  com.codegym.config.AppConfig
+com/codegym/service/Mark/IMarkService.java
+ com.codegym.service.Mark.IMarkService
+com/codegym/service/IGeneralService.java
+ com.codegym.service.IGeneralService
+com/codegym/service/DiaryStudent/IDiaryStudentService.java
+ com.codegym.service.DiaryStudent.IDiaryStudentService
+com/codegym/repository/IDiaryStudentRepository.java
+ com.codegym.repository.IDiaryStudentRepository
+com/codegym/service/DiaryStudent/DiaryStudentService.java
+ com.codegym.service.DiaryStudent.DiaryStudentService
+com/codegym/controller/UserController.java
+ com.codegym.controller.UserController
+com/codegym/repository/IDiaryClassRepository.java
+ com.codegym.repository.IDiaryClassRepository
+com/codegym/repository/ISubjectRepository.java
+ com.codegym.repository.ISubjectRepository
+com/codegym/repository/IMarkRepository.java
+ com.codegym.repository.IMarkRepository
+com/codegym/service/Subject/SubjectService.java
+ com.codegym.service.Subject.SubjectService
+com/codegym/service/User/IUserService.java
+ com.codegym.service.User.IUserService
+com/codegym/service/Subject/ISubjectService.java
+ com.codegym.service.Subject.ISubjectService
+com/codegym/logger/Logger.java
+ com.codegym.logger.Logger
+com/codegym/formatter/Formatter.java
+ com.codegym.formatter.Formatter
+com/codegym/repository/IUserRepository.java
+ com.codegym.repository.IUserRepository
+com/codegym/service/DiaryClass/IDiaryClassService.java
+ com.codegym.service.DiaryClass.IDiaryClassService
+com/codegym/controller/DiaryStudentController.java
+ com.codegym.controller.DiaryStudentController
+com/codegym/controller/DiaryClassController.java
+ com.codegym.controller.DiaryClassController
 com/codegym/model/Class.java
  com.codegym.model.Class
+com/codegym/service/DiaryClass/DiaryClassService.java
+ com.codegym.service.DiaryClass.DiaryClassService
+com/codegym/controller/MarkController.java
+ com.codegym.controller.MarkController
+com/codegym/controller/SubjectController.java
+ com.codegym.controller.SubjectController
+com/codegym/model/Role.java
+ com.codegym.model.Role
 com/codegym/model/Mark.java
  com.codegym.model.Mark
-com/codegym/model/User.java
- com.codegym.model.User
 com/codegym/model/DiaryClass.java
  com.codegym.model.DiaryClass
+<<<<<<< HEAD
 com/codegym/service/DiaryStudent/DiaryStudentService.java
  com.codegym.service.DiaryStudent.DiaryStudentService
 com/codegym/service/DiaryClass/IDiaryClassService.java
@@ -64,3 +107,13 @@ com/codegym/controller/MarkController.java
  com.codegym.controller.MarkController
 com/codegym/controller/UserController.java
  com.codegym.controller.UserController
+=======
+com/codegym/model/DiaryStudent.java
+ com.codegym.model.DiaryStudent
+com/codegym/model/User.java
+ com.codegym.model.User
+com/codegym/service/User/UserService.java
+ com.codegym.service.User.UserService
+com/codegym/controller/Controller.java
+ com.codegym.controller.Controller
+>>>>>>> eda6a061223fa8434b8dff5338fc795f72f13452
